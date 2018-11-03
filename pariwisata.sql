@@ -73,6 +73,7 @@ CREATE TABLE kuliner(
 	id_resto CHAR(4) NOT NULL,
 	id_daerah CHAR(3) NOT NULL,
 	nama_resto VARCHAR(25) NOT NULL,
+	telpon VARCHAR(12) NOT NULL,
 	lokasi VARCHAR(100) NOT NULL,
 	--deskripsi TEXT,
 	PRIMARY KEY(id_resto),
@@ -81,17 +82,18 @@ CREATE TABLE kuliner(
 ) Engine=InnoDB;
 
 INSERT INTO kuliner VALUES
-("PNGH","KPN","Ayam Bakar Mas Gendut Hanura","JL Teluk Ratai, RT. 02 RW. 02, Hanura, Padang Cermin, Pesawaran, Hanura, Padang Cermin, Kabupaten Pesawaran, Lampung 35451"),
-("PNPI","KPN","Rumah Makan Pindang Ika","Hurun, Padang Cermin, Pesawaran Regency, Lampung 35451"),
-("PNPM","KPN","Rumah Makan Puti Minang","JL Ahmad Yani, No. 25, RT 6 RW 3, Sukaraja, Bagelen, Gedung Tataan, Bagelen, Gedung Tataan, Kabupaten Pesawaran, Lampung 35366"),
-("BLHD","KBL","Ayam Penyet Hang Dihi","Jalan Pulau Sebesi No. 001, Sukarame, Kota Bandar Lampung, Lampung 35131"),
-("BLAK","KBL","Mie Ayam Koga","Jl. Teuku Umar No.48, Surabaya, Kedaton, Kota Bandar Lampung, Lampung 35112");
+("PNGH","KPN","Ayam Bakar Mas Gendut Hanura","08123456789","JL Teluk Ratai, RT. 02 RW. 02, Hanura, Padang Cermin, Pesawaran, Hanura, Padang Cermin, Kabupaten Pesawaran, Lampung 35451"),
+("PNPI","KPN","Rumah Makan Pindang Ika","08123456789","Hurun, Padang Cermin, Pesawaran Regency, Lampung 35451"),
+("PNPM","KPN","Rumah Makan Puti Minang","08123456789","JL Ahmad Yani, No. 25, RT 6 RW 3, Sukaraja, Bagelen, Gedung Tataan, Bagelen, Gedung Tataan, Kabupaten Pesawaran, Lampung 35366"),
+("BLHD","KBL","Ayam Penyet Hang Dihi","08123456789","Jalan Pulau Sebesi No. 001, Sukarame, Kota Bandar Lampung, Lampung 35131"),
+("BLAK","KBL","Mie Ayam Koga","08123456789","Jl. Teuku Umar No.48, Surabaya, Kedaton, Kota Bandar Lampung, Lampung 35112");
 
 
 CREATE TABLE hotel(
 	id_hotel CHAR(3) NOT NULL,
 	id_daerah CHAR(3) NOT NULL,
 	nama_hotel VARCHAR(25) NOT NULL,
+	telpon VARCHAR(12) NOT NULL,
 	lokasi VARCHAR(100) NOT NULL,
 	harga INT,
 	--deskripsi TEXT,
@@ -101,7 +103,17 @@ CREATE TABLE hotel(
 )Engine = InnoDB;
 
 INSERT INTO hotel VALUES
-("HBS","KLS","Hotel Bandara Syariah","Jl. H. Alamsyah Ratu Prawira Negara KM, Candi Mas, Natar, Kabupaten Lampung Selatan, Lampung 35362",380000),
-("NTG","KBL","Nuwono Tasya Guesthouse","Jalan Perwira No.9, Rajabasa, Kota Bandar Lampung, Lampung 35122",160000,"becekkkk barbie bechekkkkk"),
-("HSL","KBL","Hotel Sheraton Lampung","Jl. Wolter Monginsidi No.175, Gulak Galik, Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35401",642000),
-("HEL","KBL","Home Stay Elmo's Lampung","Perumahan Kelapa 3 Asri blok C 3, Klp. Tiga, Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35214",600000);
+("HBS","KLS","Hotel Bandara Syariah","08123456789","Jl. H. Alamsyah Ratu Prawira Negara KM, Candi Mas, Natar, Kabupaten Lampung Selatan, Lampung 35362",380000),
+("NTG","KBL","Nuwono Tasya Guesthouse","08123456789","Jalan Perwira No.9, Rajabasa, Kota Bandar Lampung, Lampung 35122",160000,"becekkkk barbie bechekkkkk"),
+("HSL","KBL","Hotel Sheraton Lampung","08123456789","Jl. Wolter Monginsidi No.175, Gulak Galik, Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35401",642000),
+("HEL","KBL","Home Stay Elmo's Lampung","08123456789","Perumahan Kelapa 3 Asri blok C 3, Klp. Tiga, Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35214",600000);
+
+<!-- Member -->
+
+CREATE TABLE member(
+	nama_member VARCHAR(25) NOT NULL,
+	uname VARCHAR(8) NOT NULL,
+	pass VARCHAR(8) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	PRIMARY KEY(uname),
+)Engine = InnoDB;
